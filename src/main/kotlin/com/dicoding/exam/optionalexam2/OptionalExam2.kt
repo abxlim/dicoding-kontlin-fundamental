@@ -2,5 +2,5 @@ package com.dicoding.exam.optionalexam2
 
 // TODO
 fun minAndMax(number: Int): Int {
-    return 0
+    return number.toString().map { it.digitToInt() }.let { it.min() + it.max() }
 }
