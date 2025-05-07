@@ -2,28 +2,15 @@ package com.dicoding.exam.exam3
 
 // TODO
 fun <T> checkType(args: T): String {
-    val dataType: String
+    val dataType : String = when (args) {
+        is Int -> "Integer"
+        is String -> "String"
+        is Boolean -> "Boolean"
+        is Double -> "Double"
+        is List <*> -> "List"
+        is Map <*, *> -> "Map"
+        else -> "Unknown Type"
+    }
 
-    if (args is Int) {
-        dataType = "Integer"
-    }
-    else if (args is String) {
-        dataType = "String"
-    }
-    else if (args is Boolean) {
-        dataType = "Boolean"
-    }
-    else if (args is Double) {
-        dataType = "Double"
-    }
-    else if (args is List <*>) {
-        dataType = "List"
-    }
-    else if (args is Map <*, *>) {
-        dataType = "Map"
-    }
-    else {
-        dataType = "Unknown Type"
-    }
     return "Yes! it's $dataType"
 }
